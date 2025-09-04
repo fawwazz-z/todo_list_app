@@ -1,37 +1,48 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../controllers/dashboard_controller.dart';
+import '../../controllers/dashboard_controller.dart';
+import 'todo_list_page.dart';
+import 'history_page.dart';
+import 'profile_page.dart';
 
-class DashboardPage extends GetView<DashboardController> {
+class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
-
-  static const List<Widget> _pages = [
-    Center(child: Text("Home Page", style: TextStyle(fontSize: 20))),
-    Center(child: Text("History Page", style: TextStyle(fontSize: 20))),
-    Center(child: Text("Profile Page", style: TextStyle(fontSize: 20))),
-  ];
 
   @override
   Widget build(BuildContext context) {
+    final DashboardController controller = Get.find();
+
+    // Daftar halaman untuk tiap tab
+    final List<Widget> pages = [
+      const TodoListPage(),
+      const HistoryPage(),
+      const ProfilePage(),
+    ];
+
     return Obx(() {
       return Scaffold(
-        appBar: AppBar(
-          title: const Text("Todo List App"),
-          backgroundColor: Colors.brown[800],
-        ),
-        body: PageView(
-          controller: controller.pageController,
-          onPageChanged: (index) => controller.selectedIndex.value = index,
-          children: _pages,
-        ),
+        body: pages[controller.currentIndex.value],
+
+        // Bottom Navigation
         bottomNavigationBar: BottomNavigationBar(
-          currentIndex: controller.selectedIndex.value,
-          onTap: controller.changePage,
-          selectedItemColor: Colors.brown[800],
+          currentIndex: controller.currentIndex.value,
+          onTap: controller.changeTab,
+          backgroundColor: Colors.brown[800],
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.white70,
           items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-            BottomNavigationBarItem(icon: Icon(Icons.history), label: "History"),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: "Home",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.history),
+              label: "History",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: "Profile",
+            ),
           ],
         ),
       );

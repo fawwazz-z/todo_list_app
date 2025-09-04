@@ -12,7 +12,7 @@ class LoginController extends GetxController {
 
   void login() {
     if (usernameController.text == "admin" &&
-        passwordController.text == "1234") {
+        passwordController.text == "11") {
       isLoggedIn.value = true;
       Get.snackbar("Success", "Login berhasil");
 

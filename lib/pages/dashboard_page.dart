@@ -12,12 +12,7 @@ class DashboardPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final DashboardController controller = Get.find();
 
-    // Daftar halaman untuk tiap tab
-    final List<Widget> pages = [
-      const TodoListPage(),
-      const HistoryPage(),
-      const ProfilePage(),
-    ];
+    final List<Widget> pages = [TodoListPage(), HistoryPage(), ProfilePage()];
 
     return Obx(() {
       return Scaffold(
@@ -32,17 +27,14 @@ class DashboardPage extends StatelessWidget {
           unselectedItemColor: Colors.white70,
           items: const [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: "Home",
+              icon: Icon(Icons.sports),
+              label: "Todo List",
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.history),
               label: "History",
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: "Profile",
-            ),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
           ],
         ),
       );

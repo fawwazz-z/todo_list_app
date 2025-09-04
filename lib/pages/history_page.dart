@@ -1,10 +1,29 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '../controllers/todo_controller.dart';
+import '../widgets/todo_card.dart';
 
 class HistoryPage extends StatelessWidget {
-  const HistoryPage({super.key});
+  final TodoController todoController = Get.find();
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Obx(() {
+      if (todoController.history.isEmpty) {
+        return const Center(child: Text("Belum ada todo selesai"));
+      }
+      return ListView.builder(
+        itemCount: todoController.history.length,
+        itemBuilder: (context, index) {
+          final todo = todoController.history[index];
+          return TodoCard(
+            title: todo.title,
+            description: todo.description,
+            category: todo.category,
+            isDone: true,
+          );
+        },
+      );
+    });
   }
 }

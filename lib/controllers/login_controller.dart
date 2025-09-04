@@ -11,8 +11,7 @@ class LoginController extends GetxController {
   var isLoggedIn = false.obs;
 
   void login() {
-    if (usernameController.text == "admin" &&
-        passwordController.text == "11") {
+    if (usernameController.text == "admin" && passwordController.text == "11") {
       isLoggedIn.value = true;
       Get.snackbar("Success", "Login berhasil");
 

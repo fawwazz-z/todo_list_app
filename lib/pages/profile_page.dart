@@ -9,10 +9,7 @@ class ProfilePage extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.brown[800], // tema coklat tua
-        title: const Text(
-          "Profile",
-          style: TextStyle(color: Colors.white),
-        ),
+        title: const Text("Profile", style: TextStyle(color: Colors.white)),
         centerTitle: true,
         elevation: 0,
       ),
@@ -34,7 +31,7 @@ class ProfilePage extends StatelessWidget {
 
             // Nama & Email Dummy
             const Text(
-              "FawwazXMurtyy",
+              "Fawwas X Rengga",
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
@@ -44,10 +41,7 @@ class ProfilePage extends StatelessWidget {
             const SizedBox(height: 5),
             const Text(
               "murty@example.com",
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.black54,
-              ),
+              style: TextStyle(fontSize: 16, color: Colors.black54),
             ),
 
             const SizedBox(height: 20),
@@ -86,7 +80,6 @@ class ProfilePage extends StatelessWidget {
 
             const SizedBox(height: 30),
 
-            // Tombol Logout Dummy (tidak ada fungsi)
             ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(

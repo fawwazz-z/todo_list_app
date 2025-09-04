@@ -12,7 +12,7 @@ class TodoListPage extends StatelessWidget {
     return Scaffold(
       body: Obx(() {
         if (todoController.activeTodos.isEmpty) {
-          return const Center(child: Text("Belum ada todo"));
+          return const Center(child: Text("Belum ada Tugas"));
         }
         return ListView.builder(
           itemCount: todoController.activeTodos.length,

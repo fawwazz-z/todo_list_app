@@ -65,7 +65,7 @@ class AddTodoPage extends StatelessWidget {
                     );
 
                     Get.back(); // Balik ke TodoListPage
-                    Get.snackbar("Sukses", "Todo berhasil ditambahkan");
+                    Get.snackbar("Sukses", "Tugas berhasil ditambahkan");
                   } else {
                     Get.snackbar("Error", "Judul & Deskripsi harus diisi");
                   }

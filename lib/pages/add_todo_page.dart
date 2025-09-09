@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import '../controllers/todo_controller.dart';
 
 class AddTodoPage extends StatelessWidget {
+  AddTodoPage({super.key});
   final TodoController todoController = Get.find();
-
   final titleController = TextEditingController();
   final descController = TextEditingController();
   final categoryList = ["Sekolah", "Pekerjaan", "Pribadi"];

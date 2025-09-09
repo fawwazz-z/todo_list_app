@@ -24,7 +24,7 @@ class ProfilePage extends StatelessWidget {
               backgroundColor: Colors.brown[800],
               child: const CircleAvatar(
                 radius: 55,
-                backgroundImage: AssetImage('images/murty.png'),
+                backgroundImage: AssetImage('images/ppkosong.jpg'),
               ),
             ),
             const SizedBox(height: 15),
@@ -79,21 +79,6 @@ class ProfilePage extends StatelessWidget {
             ),
 
             const SizedBox(height: 30),
-
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.brown[800],
-                minimumSize: const Size(double.infinity, 50),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-              ),
-              child: const Text(
-                "Logout",
-                style: TextStyle(fontSize: 16, color: Colors.white),
-              ),
-            ),
           ],
         ),
       ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:todo_list_app/bindings/dashboard_bindings.dart';
 import '../bindings/dashboard_bindings.dart';
 import '../pages/dashboard_page.dart';
 

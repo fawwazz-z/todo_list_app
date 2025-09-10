@@ -4,13 +4,14 @@ import '../controllers/todo_controller.dart';
 import '../widgets/todo_card.dart';
 
 class HistoryPage extends StatelessWidget {
+  HistoryPage({super.key});
   final TodoController todoController = Get.find();
 
   @override
   Widget build(BuildContext context) {
     return Obx(() {
       if (todoController.history.isEmpty) {
-        return const Center(child: Text("Belum ada todo selesai"));
+        return Center(child: Text("Belum ada todo selesai"));
       }
       return ListView.builder(
         itemCount: todoController.history.length,

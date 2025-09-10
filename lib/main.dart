@@ -3,6 +3,9 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:todo_list_app/bindings/dashboard_bindings.dart';
 import 'package:todo_list_app/routes/pages.dart';
 import 'package:todo_list_app/routes/routes.dart';
+import 'package:get/get.dart';
+import 'package:todo_list_app/bindings/login_bindings.dart';
+import 'package:todo_list_app/pages/login_page.dart';
 
 void main() {
   runApp(const MyApp());

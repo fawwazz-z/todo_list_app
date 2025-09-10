@@ -31,7 +31,7 @@ class ProfilePage extends StatelessWidget {
 
             // Nama & Email Dummy
             const Text(
-              "FawwazXMurtyy",
+              "Fawwas X Rengga",
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
@@ -77,6 +77,10 @@ class ProfilePage extends StatelessWidget {
                 ),
               ),
             ),
+
+
+            const SizedBox(height: 30),
+
           ],
         ),
       ),

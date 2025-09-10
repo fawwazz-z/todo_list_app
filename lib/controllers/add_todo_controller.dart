@@ -7,6 +7,7 @@ class AddTodoController extends GetxController {
   var title = ''.obs;
   var description = ''.obs;
   var category = ''.obs;
+  var dateNow = ''.obs; 
 
   void addNewTodo() {
     if (title.isEmpty || description.isEmpty) {
@@ -17,7 +18,16 @@ class AddTodoController extends GetxController {
       return;
     }
 
-    todoController.addTodo(title.value, description.value, category.value);
+    // 🆕 simpan tanggal saat ini
+    var today = dateNow.value = DateTime.now().toString();
+
+    todoController.addTodo(
+      title.value,
+      description.value,
+      category.value,
+      today, // kirim dateNow ke todoController
+    );
+
     Get.back();
     Get.snackbar("Sukses", "Todo berhasil ditambahkan");
   }

@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart'; // 🆕 untuk format tanggal
 import '../controllers/todo_controller.dart';
+
 
 class AddTodoPage extends StatelessWidget {
   AddTodoPage({super.key});
+
   final TodoController todoController = Get.find();
   final titleController = TextEditingController();
   final descController = TextEditingController();
   final categoryList = ["Sekolah", "Pekerjaan", "Pribadi"];
   final RxString selectedCategory = "Sekolah".obs;
+  final String dateNow = DateFormat('dd MMM yyyy, HH:mm').format(DateTime.now());
 
   @override
   Widget build(BuildContext context) {
@@ -57,11 +61,16 @@ class AddTodoPage extends StatelessWidget {
                 onPressed: () {
                   if (titleController.text.isNotEmpty &&
                       descController.text.isNotEmpty) {
+                    // 🆕 ambil tanggal sekarang & format
+                    final String dateNow =
+                        DateFormat('dd MMM yyyy, HH:mm').format(DateTime.now());
+
                     // 👉 Tambah ke controller
                     todoController.addTodo(
                       titleController.text,
                       descController.text,
                       selectedCategory.value,
+                      dateNow, // simpan format yg rapi
                     );
 
                     Get.back(); // Balik ke TodoListPage

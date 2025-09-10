@@ -11,35 +11,11 @@ import 'routes.dart';
 
 class AppPages {
   static final pages = [
-    GetPage(
-      name: AppRoute.loginPage,
-      page: () => const LoginPage(),
-      binding: LoginBinding(),
-    ),
-    GetPage(
-      name: AppRoute.dashboardPage,
-      page: () => const DashboardPage(),
-      binding: DashboardBinding(),
-    ),
-    GetPage(
-      name: AppRoute.addPage,
-      page: () => AddTodoPage(),
-      binding: DashboardBinding(),
-    ),
-    GetPage(
-      name: AppRoute.profilePage,
-      page: () => const ProfilePage(),
-      binding: DashboardBinding(),
-    ),
-    GetPage(
-      name: AppRoute.todoListPage,
-      page: () => TodoListPage(),
-      binding: DashboardBinding(),
-    ),
-    GetPage(
-      name: AppRoute.historyPage,
-      page: () => HistoryPage(),
-      binding: DashboardBinding(),
-    ),
+    GetPage(name: AppRoute.loginPage,page: () => const LoginPage(),binding: LoginBinding(),),
+    GetPage(name: AppRoute.dashboardPage,page: () => const DashboardPage(),binding: DashboardBinding(),),
+    GetPage(name: AppRoute.addPage,page: () => AddTodoPage(),binding: DashboardBinding(),),
+    GetPage(name: AppRoute.profilePage,page: () => const ProfilePage(),binding: DashboardBinding(),),
+    GetPage(name: AppRoute.todoListPage,page: () => TodoListPage(),binding: DashboardBinding(),),
+    GetPage(name: AppRoute.historyPage,page: () => HistoryPage(),binding: DashboardBinding(),),
   ];
 }

@@ -5,6 +5,7 @@ class TodoCard extends StatelessWidget {
   final String description;
   final String category;
   final bool isDone;
+  final String? date; // 🆕 tambah field untuk tanggal
   final VoidCallback? onDone;
 
   const TodoCard({
@@ -13,6 +14,7 @@ class TodoCard extends StatelessWidget {
     required this.description,
     required this.category,
     required this.isDone,
+    this.date,
     this.onDone,
   });
 
@@ -27,7 +29,7 @@ class TodoCard extends StatelessWidget {
             decoration: isDone ? TextDecoration.lineThrough : null,
           ),
         ),
-        subtitle: Text("$description • $category"),
+        subtitle: Text("$description • $category ${date != null ? '• $date' : ''}"), // 🆕 tampilkan tanggal jika ada
         trailing: isDone
             ? const Icon(Icons.check_circle, color: Colors.green)
             : IconButton(

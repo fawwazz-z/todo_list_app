@@ -24,6 +24,7 @@ class TodoListPage extends StatelessWidget {
               description: todo.description,
               category: todo.category,
               isDone: todo.isDone,
+              date: todo.date, // 🆕 tampilkan tanggal
               onDone: () {
                 todoController.markAsDone(todoController.todos.indexOf(todo));
               },

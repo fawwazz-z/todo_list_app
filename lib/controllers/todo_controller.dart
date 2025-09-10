@@ -5,20 +5,24 @@ class Todo {
   String description;
   String category;
   bool isDone;
+  String? date; // 🆕 tambah field untuk tanggal
 
   Todo({
     required this.title,
     required this.description,
     required this.category,
     this.isDone = false,
+    this.date,
   });
 }
 
 class TodoController extends GetxController {
   var todos = <Todo>[].obs;
+ 
 
-  void addTodo(String title, String description, String category) {
-    todos.add(Todo(title: title, description: description, category: category));
+
+  void addTodo(String title, String description, String category, String date) {
+    todos.add(Todo(title: title, description: description, category: category, date: DateTime.now().toString()));
   }
 
   void markAsDone(int index) {

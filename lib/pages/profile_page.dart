@@ -71,14 +71,16 @@ class ProfilePage extends StatelessWidget {
                     ListTile(
                       leading: Icon(Icons.info, color: Colors.brown),
                       title: Text("Tentang Saya"),
-                      subtitle: Text("Belajar Flutter dengan GetX 🚀"),
+                      subtitle: Text("Belajar Flutter dengan GetX "),
                     ),
                   ],
                 ),
               ),
             ),
 
+
             const SizedBox(height: 30),
+
           ],
         ),
       ),

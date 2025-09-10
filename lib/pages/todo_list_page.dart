@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import '../controllers/todo_controller.dart';
 import '../widgets/todo_card.dart';
 import 'add_todo_page.dart';
+import '../routes/routes.dart';
 
 class TodoListPage extends StatelessWidget {
   final TodoController todoController = Get.find();
@@ -31,7 +32,7 @@ class TodoListPage extends StatelessWidget {
         );
       }),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => Get.to(() => AddTodoPage()),
+        onPressed: () => Get.toNamed(AppRoute.addPage),
         child: const Icon(Icons.add),
       ),
     );

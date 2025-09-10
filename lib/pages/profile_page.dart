@@ -9,10 +9,7 @@ class ProfilePage extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.brown[800], // tema coklat tua
-        title: const Text(
-          "Profile",
-          style: TextStyle(color: Colors.white),
-        ),
+        title: const Text("Profile", style: TextStyle(color: Colors.white)),
         centerTitle: true,
         elevation: 0,
       ),
@@ -27,7 +24,7 @@ class ProfilePage extends StatelessWidget {
               backgroundColor: Colors.brown[800],
               child: const CircleAvatar(
                 radius: 55,
-                backgroundImage: AssetImage('images/murty.png'),
+                backgroundImage: AssetImage('images/ppkosong.jpg'),
               ),
             ),
             const SizedBox(height: 15),
@@ -44,10 +41,7 @@ class ProfilePage extends StatelessWidget {
             const SizedBox(height: 5),
             const Text(
               "murty@example.com",
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.black54,
-              ),
+              style: TextStyle(fontSize: 16, color: Colors.black54),
             ),
 
             const SizedBox(height: 20),
@@ -77,28 +71,10 @@ class ProfilePage extends StatelessWidget {
                     ListTile(
                       leading: Icon(Icons.info, color: Colors.brown),
                       title: Text("Tentang Saya"),
-                      subtitle: Text("Belajar Flutter dengan GetX 🚀"),
+                      subtitle: Text("Belajar Flutter dengan GetX "),
                     ),
                   ],
                 ),
-              ),
-            ),
-
-            const SizedBox(height: 30),
-
-            // Tombol Logout Dummy (tidak ada fungsi)
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.brown[800],
-                minimumSize: const Size(double.infinity, 50),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-              ),
-              child: const Text(
-                "Logout",
-                style: TextStyle(fontSize: 16, color: Colors.white),
               ),
             ),
           ],

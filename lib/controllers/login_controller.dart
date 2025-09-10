@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:todo_list_app/bindings/dashboard_bindings.dart';
-import '../bindings/dashboard_bindings.dart';
-import '../pages/dashboard_page.dart';
+import 'package:todo_list_app/routes/routes.dart';
 
 class LoginController extends GetxController {
   final usernameController = TextEditingController();
@@ -16,7 +14,7 @@ class LoginController extends GetxController {
       Get.snackbar("Success", "Login berhasil");
 
       // Redirect ke Dashboard
-      Get.off(() => const DashboardPage(), binding: DashboardBinding());
+      Get.offAllNamed(AppRoute.dashboardPage);
     } else {
       Get.snackbar("Error", "Username / Password salah");
     }

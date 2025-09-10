@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:todo_list_app/bindings/login_bindings.dart';
-import 'bindings/login_bindings.dart';
-import 'pages/login_page.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:todo_list_app/bindings/dashboard_bindings.dart';
+import 'package:todo_list_app/routes/pages.dart';
+import 'package:todo_list_app/routes/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,8 +15,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialBinding: LoginBinding(),
-      home: const LoginPage(),
+      title: 'Todo List App',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.brown),
+      ),
+      initialRoute: AppRoute.loginPage,
+      getPages: AppPages.pages,
+      initialBinding: DashboardBinding(),
     );
   }
 }

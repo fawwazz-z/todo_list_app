@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_list_app/widgets/custom_color.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -6,9 +7,9 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.white,
       appBar: AppBar(
-        backgroundColor: Colors.brown[800], // tema coklat tua
+        backgroundColor: AppColors.darkBrown, // tema coklat tua
         title: const Text("Profile", style: TextStyle(color: Colors.white)),
         centerTitle: true,
         elevation: 0,
@@ -21,7 +22,7 @@ class ProfilePage extends StatelessWidget {
             // Foto Profil Dummy
             CircleAvatar(
               radius: 60,
-              backgroundColor: Colors.brown[800],
+              backgroundColor: AppColors.darkBrown,
               child: const CircleAvatar(
                 radius: 55,
                 backgroundImage: AssetImage('images/ppkosong.jpg'),
@@ -41,7 +42,7 @@ class ProfilePage extends StatelessWidget {
             const SizedBox(height: 5),
             const Text(
               "murty@example.com",
-              style: TextStyle(fontSize: 16, color: Colors.black54),
+              style: TextStyle(fontSize: 16, color: AppColors.black),
             ),
 
             const SizedBox(height: 20),
@@ -57,19 +58,19 @@ class ProfilePage extends StatelessWidget {
                 child: Column(
                   children: const [
                     ListTile(
-                      leading: Icon(Icons.work, color: Colors.brown),
+                      leading: Icon(Icons.work, color: AppColors.brown),
                       title: Text("Sekolah"),
                       subtitle: Text("SMK RADEN UMAR SAID"),
                     ),
                     Divider(),
                     ListTile(
-                      leading: Icon(Icons.location_on, color: Colors.brown),
+                      leading: Icon(Icons.location_on, color: AppColors.brown),
                       title: Text("Lokasi"),
                       subtitle: Text("KUDUS"),
                     ),
                     Divider(),
                     ListTile(
-                      leading: Icon(Icons.info, color: Colors.brown),
+                      leading: Icon(Icons.info, color: AppColors.brown),
                       title: Text("Tentang Saya"),
                       subtitle: Text("Belajar Flutter dengan GetX "),
                     ),
@@ -78,9 +79,7 @@ class ProfilePage extends StatelessWidget {
               ),
             ),
 
-
             const SizedBox(height: 30),
-
           ],
         ),
       ),

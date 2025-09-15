@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const Color primary = Color(0xFF748873); 
-  static const Color secondary = Color(0xFFD1A980); 
-  static const Color background = Color(0xFFE5E0D8); 
-  static const Color surface = Color(0xFFF8F8F8);
-  static const Color appbar =  Color(0xFFF08787); 
-  static const Color textDark = Colors.black87;
-  static const Color textLight = Colors.white;
+  // Warna utama palet coklat
+  static const Color darkBrown = Color(0xFF3A1F04); // coklat tua
+  static const Color brown = Color(0xFF7C4700); // coklat utama
+  static const Color mediumBrown = Color(0xFF997950); // coklat sedang
+  static const Color lightBrown = Color(0xFFD1A980); // coklat muda
+
+  // Netral
+  static const Color white = Color(0xFFFFFFFF);
+  static const Color black = Color(0xFF000000);
 }

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/todo_controller.dart';
 import '../widgets/todo_card.dart';
-import 'add_todo_page.dart';
 import '../routes/routes.dart';
 
 class TodoListPage extends StatelessWidget {

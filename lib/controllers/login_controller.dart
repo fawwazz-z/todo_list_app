@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo_list_app/routes/routes.dart';
-import '../bindings/dashboard_bindings.dart';
-import '../pages/dashboard_page.dart';
 
 class LoginController extends GetxController {
   final usernameController = TextEditingController();

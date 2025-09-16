@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'todo_controller.dart';
+import 'package:intl/intl.dart';
 
 class AddTodoController extends GetxController {
   final todoController = Get.find<TodoController>();
@@ -7,7 +8,7 @@ class AddTodoController extends GetxController {
   var title = ''.obs;
   var description = ''.obs;
   var category = ''.obs;
-  var dateNow = ''.obs; 
+  var dateNow = ''.obs;
 
   void addNewTodo() {
     if (title.isEmpty || description.isEmpty) {
@@ -19,7 +20,9 @@ class AddTodoController extends GetxController {
     }
 
     // 🆕 simpan tanggal saat ini
-    var today = dateNow.value = DateTime.now().toString();
+    var today = dateNow.value = DateFormat(
+      'dd MMM yyyy, HH:mm',
+    ).format(DateTime.now());
 
     todoController.addTodo(
       title.value,

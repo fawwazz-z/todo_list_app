@@ -23,7 +23,7 @@ class AddTodoPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
-        child: Card(  
+        child: Card(
           elevation: 4,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
@@ -50,8 +50,8 @@ class AddTodoPage extends StatelessWidget {
                 // 📌 Deskripsi
                 TextField(
                   controller: descController,
-                  minLines: 1,      // awalnya sama dengan input lain
-                  maxLines: null,   // bisa melebar sesuai isi
+                  minLines: 1, // awalnya sama dengan input lain
+                  maxLines: null, // bisa melebar sesuai isi
                   decoration: InputDecoration(
                     labelText: "Deskripsi",
                     hintText: "Tambahkan deskripsi detail",
@@ -76,8 +76,7 @@ class AddTodoPage extends StatelessWidget {
                       ),
                     ),
                     items: categoryList
-                        .map((c) =>
-                            DropdownMenuItem(value: c, child: Text(c)))
+                        .map((c) => DropdownMenuItem(value: c, child: Text(c)))
                         .toList(),
                     onChanged: (value) {
                       selectedCategory.value = value!;
@@ -100,9 +99,9 @@ class AddTodoPage extends StatelessWidget {
                     onPressed: () {
                       if (titleController.text.isNotEmpty &&
                           descController.text.isNotEmpty) {
-                        final String dateNow =
-                            DateFormat('dd MMM yyyy, HH:mm')
-                                .format(DateTime.now());
+                        final String dateNow = DateFormat(
+                          'dd MMM yyyy, HH:mm',
+                        ).format(DateTime.now());
 
                         todoController.addTodo(
                           titleController.text,
@@ -112,18 +111,27 @@ class AddTodoPage extends StatelessWidget {
                         );
 
                         Get.back();
-                        Get.snackbar("Sukses", "Tugas berhasil ditambahkan",
-                            snackPosition: SnackPosition.BOTTOM);
+                        Get.snackbar(
+                          "Sukses",
+                          "Tugas berhasil ditambahkan",
+                          snackPosition: SnackPosition.BOTTOM,
+                        );
                       } else {
-                        Get.snackbar("Error", "Judul & Deskripsi harus diisi",
-                            backgroundColor: Colors.red[400],
-                            colorText: Colors.white,
-                            snackPosition: SnackPosition.BOTTOM);
+                        Get.snackbar(
+                          "Error",
+                          "Judul & Deskripsi harus diisi",
+                          backgroundColor: Colors.red[400],
+                          colorText: Colors.white,
+                          snackPosition: SnackPosition.BOTTOM,
+                        );
                       }
                     },
                     label: const Text(
                       "Simpan",
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),

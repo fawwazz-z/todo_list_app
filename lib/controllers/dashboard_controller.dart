@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
 
 class DashboardController extends GetxController {
-  // Index tab aktif
-  var currentIndex = 0.obs;
+  // index tab aktif
+  final RxInt currentIndex = 0.obs;
 
-  // Fungsi untuk ganti tab
+  // ganti tab
   void changeTab(int index) {
     currentIndex.value = index;
   }

@@ -10,6 +10,12 @@ class TodoListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Daftar Tugas"),
+        centerTitle: true,
+        backgroundColor: Colors.blue,
+        elevation: 2,
+      ),
       body: Obx(() {
         if (todoController.activeTodos.isEmpty) {
           return const Center(child: Text("Belum ada Tugas"));
@@ -23,9 +29,19 @@ class TodoListPage extends StatelessWidget {
               description: todo.description,
               category: todo.category,
               isDone: todo.isDone,
-              date: todo.date, // 🆕 tampilkan tanggal
+              date: todo.date,
               onDone: () {
                 todoController.markAsDone(todoController.todos.indexOf(todo));
+                Get.snackbar(
+                  "Berhasil",
+                  "Tugas dipindahkan ke History",
+                  snackPosition: SnackPosition.BOTTOM,
+                  backgroundColor: Colors.green.withOpacity(0.8),
+                  colorText: Colors.white,
+                  margin: const EdgeInsets.all(10),
+                  borderRadius: 8,
+                  duration: const Duration(seconds: 2),
+                );
               },
             );
           },

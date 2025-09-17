@@ -31,7 +31,7 @@ class LoginPage extends GetView<LoginController> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 const Text(
-                  "Todo List App",
+                  "CheckUp App",
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.bold,

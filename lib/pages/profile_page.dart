@@ -78,7 +78,7 @@ class ProfilePage extends StatelessWidget {
 
             // Profile kedua
             buildProfileCard(
-              imagePath: 'images/pawas.jpg',
+              imagePath: 'images/murty.png',
               name: 'pawas labib',
               email: 'pawaslabibs@example.com',
             ),

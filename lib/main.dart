@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.brown),
       ),
-      initialRoute: AppRoute.loginPage,
+      initialRoute: AppRoute.splashscreenPage,
       getPages: AppPages.pages,
       initialBinding: DashboardBinding(),
     );

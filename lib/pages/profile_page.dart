@@ -20,7 +20,7 @@ class ProfilePage extends StatelessWidget {
             // Foto profil
             CircleAvatar(
               radius: 40,
-              backgroundColor: AppColors.darkBrown,
+              backgroundColor: Colors.brown[800],
               child: CircleAvatar(
                 radius: 37,
                 backgroundImage: AssetImage(imagePath),
@@ -60,7 +60,7 @@ class ProfilePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
-        backgroundColor: AppColors.darkBrown,
+        backgroundColor: Colors.brown[800],
         title: const Text("Profile", style: TextStyle(color: Colors.white)),
         centerTitle: true,
         elevation: 0,
@@ -78,7 +78,7 @@ class ProfilePage extends StatelessWidget {
 
             // Profile kedua
             buildProfileCard(
-              imagePath: 'images/murty.png',
+              imagePath: 'images/pawas.jpg',
               name: 'pawas labib',
               email: 'pawaslabibs@example.com',
             ),

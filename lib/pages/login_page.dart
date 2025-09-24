@@ -24,7 +24,7 @@ class LoginPage extends GetView<LoginController> {
                   color: Colors.black26,
                   blurRadius: 10,
                   offset: const Offset(0, 4),
-                )
+                ),
               ],
             ),
             child: Column(
@@ -60,10 +60,7 @@ class LoginPage extends GetView<LoginController> {
                 ),
                 const SizedBox(height: 24),
 
-                PrimaryButton(
-                  text: "Login",
-                  onPressed: controller.login,
-                ),
+                PrimaryButton(text: "Login", onPressed: controller.login),
               ],
             ),
           ),

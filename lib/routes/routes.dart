@@ -5,4 +5,5 @@ class AppRoute {
   static const String profilePage = "/profilePage";
   static const String todoListPage = "/todoListPage";
   static const String historyPage = "/historyPage";
+  static const String splashscreenPage = "/splashscreenPage";
 }

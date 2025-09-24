@@ -7,7 +7,7 @@ class AddTodoController extends GetxController {
   var title = ''.obs;
   var description = ''.obs;
   var category = ''.obs;
-  var dateNow = ''.obs; 
+  var dateNow = ''.obs;
 
   void addNewTodo() {
     if (title.isEmpty || description.isEmpty) {

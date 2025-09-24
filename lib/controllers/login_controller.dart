@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:todo_list_app/routes/routes.dart';
 
 class LoginController extends GetxController {
@@ -8,34 +9,16 @@ class LoginController extends GetxController {
 
   var isLoggedIn = false.obs;
 
-    void login() {
-          if (usernameController.text == "admin" && passwordController.text == "11") {
-        isLoggedIn.value = true;
-        Get.snackbar(
-          "Success",
-          "Login berhasil",
-          backgroundColor: Colors.green.withOpacity(0.8),
-          colorText: Colors.white,
-          snackPosition: SnackPosition.BOTTOM,
-          borderRadius: 8,
-          margin: const EdgeInsets.all(10),
-          duration: const Duration(seconds: 2),
-        );
-
-        // Redirect ke Dashboard
-        Get.offAllNamed(AppRoute.dashboardPage);
-      } else {
-        Get.snackbar(
-          "Error",
-          "Username / Password salah",
-          backgroundColor: Colors.red.withOpacity(0.8),
-          colorText: Colors.white,
-          snackPosition: SnackPosition.BOTTOM,
-          borderRadius: 8,
-          margin: const EdgeInsets.all(10),
-          duration: const Duration(seconds: 2),
-        );
-      }
+  login() async {
+    if (usernameController.text.toString() == "admin" &&
+        passwordController.text.toString() == "admin") {
+      final prefs = await SharedPreferences.getInstance();
+      prefs.setString("username", usernameController.text.toString());
+      Get.offAllNamed(AppRoute.todoListPage);
+      Get.snackbar("Login", "Login Successful");
+    } else {
+      Get.snackbar("Error", "invalid username or password");
+    }
   }
 
   @override

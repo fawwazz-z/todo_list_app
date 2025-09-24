@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../controllers/dashboard_controller.dart';
-import 'todo_list_page.dart'; 
+import 'todo_list_page.dart';
 import 'history_page.dart';
 import 'profile_page.dart';
 
@@ -27,8 +27,8 @@ class DashboardPage extends StatelessWidget {
           unselectedItemColor: Colors.white70,
           items: const [
             BottomNavigationBarItem(
-              icon: Icon(Icons.sports),
-              label: "Todo List",
+              icon: Icon(Icons.home),
+              label: "Daftar Tugas",
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.history),

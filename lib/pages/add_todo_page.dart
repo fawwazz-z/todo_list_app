@@ -33,7 +33,6 @@ class AddTodoPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // 📌 Judul
                 TextField(
                   controller: titleController,
                   decoration: InputDecoration(
@@ -47,7 +46,6 @@ class AddTodoPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
 
-                // 📌 Deskripsi
                 TextField(
                   controller: descController,
                   minLines: 1, // awalnya sama dengan input lain
@@ -64,7 +62,6 @@ class AddTodoPage extends StatelessWidget {
 
                 const SizedBox(height: 16),
 
-                // 📌 Dropdown kategori
                 Obx(
                   () => DropdownButtonFormField<String>(
                     value: selectedCategory.value,
@@ -85,7 +82,7 @@ class AddTodoPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 24),
 
-                // 📌 Tombol Simpan
+                // SIMPAN
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton.icon(

@@ -11,9 +11,12 @@ class HistoryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("History Tugas"),
+        title: const Text(
+          "History Tugas",
+          style: TextStyle(color: Colors.white),
+        ),
         centerTitle: true,
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.brown[800],
         elevation: 2,
       ),
       body: Obx(() {

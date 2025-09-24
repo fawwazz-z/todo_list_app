@@ -31,7 +31,7 @@ class TodoCard extends StatelessWidget {
         ),
         subtitle: Text(
           "$description • $category ${date != null ? '• $date' : ''}",
-        ), // 🆕 tampilkan tanggal jika ada
+        ),
         trailing: isDone
             ? const Icon(Icons.check_circle, color: Colors.green)
             : IconButton(

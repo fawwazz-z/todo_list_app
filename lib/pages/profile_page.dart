@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:todo_list_app/widgets/custom_color.dart';
+import 'package:todo_list_app/controllers/login_controller.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -57,6 +59,8 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final LoginController loginController = Get.put(LoginController());
+
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
@@ -81,6 +85,29 @@ class ProfilePage extends StatelessWidget {
               imagePath: 'images/pawas.jpg',
               name: 'pawas labib',
               email: 'pawaslabibs@example.com',
+            ),
+
+            const SizedBox(height: 40),
+
+            // Tombol Logout
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.brown[800],
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 40,
+                  vertical: 15,
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+              onPressed: () {
+                loginController.logout();
+              },
+              child: const Text(
+                "Logout",
+                style: TextStyle(color: Colors.white, fontSize: 16),
+              ),
             ),
           ],
         ),

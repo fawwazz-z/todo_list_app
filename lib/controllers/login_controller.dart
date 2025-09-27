@@ -14,11 +14,21 @@ class LoginController extends GetxController {
         passwordController.text.toString() == "admin") {
       final prefs = await SharedPreferences.getInstance();
       prefs.setString("username", usernameController.text.toString());
-      Get.offAllNamed(AppRoute.todoListPage);
+      Get.offAllNamed(AppRoute.dashboardPage);
       Get.snackbar("Login", "Login Successful");
     } else {
       Get.snackbar("Error", "invalid username or password");
     }
+  }
+
+  /// Fungsi Logout
+  Future<void> logout() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.clear(); // hapus semua data login
+
+    // arahkan kembali ke splashscreen
+    Get.offAllNamed(AppRoute.splashscreenPage);
+    Get.snackbar("Logout", "Berhasil keluar");
   }
 
   @override

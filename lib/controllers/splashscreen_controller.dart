@@ -5,18 +5,22 @@ import 'package:shared_preferences/shared_preferences.dart';
 class SplashscreenController extends GetxController {
   @override
   void onInit() {
-    // TODO: implement onInit
     super.onInit();
-    checklogin();
+    checkLogin();
   }
 
-  checklogin() async {
-    await Future.delayed(Duration(seconds: 3));
+  checkLogin() async {
+    // kasih delay biar splashscreen sempat tampil
+    await Future.delayed(const Duration(seconds: 3));
+
     final prefs = await SharedPreferences.getInstance();
+
     if (prefs.getString("username") != null) {
-      Get.offAllNamed(AppRoute.loginPage);
-    } else {
+      // ✅ kalau ada username berarti sudah login → ke dashboard
       Get.offAllNamed(AppRoute.dashboardPage);
+    } else {
+      // ❌ kalau belum login → ke login page
+      Get.offAllNamed(AppRoute.loginPage);
     }
   }
 }

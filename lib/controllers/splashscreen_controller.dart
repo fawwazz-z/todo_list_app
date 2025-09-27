@@ -14,9 +14,9 @@ class SplashscreenController extends GetxController {
     await Future.delayed(Duration(seconds: 3));
     final prefs = await SharedPreferences.getInstance();
     if (prefs.getString("username") != null) {
-      Get.offAllNamed(AppRoute.dashboardPage);
-    } else {
       Get.offAllNamed(AppRoute.loginPage);
+    } else {
+      Get.offAllNamed(AppRoute.dashboardPage);
     }
   }
 }

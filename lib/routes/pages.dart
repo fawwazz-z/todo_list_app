@@ -46,7 +46,7 @@ class AppPages {
     GetPage(
       name: AppRoute.splashscreenPage,
       page: () => SplashscreenPage(),
-      binding: splashbinding(),
+      binding: Splashbinding(),
     ),
   ];
 }

@@ -8,27 +8,23 @@ class LoginController extends GetxController {
   final passwordController = TextEditingController();
 
   var isLoggedIn = false.obs;
+  var isMobile = true
+      .obs; 
 
-  login() async {
-    if (usernameController.text.toString() == "admin" &&
-        passwordController.text.toString() == "admin") {
-      final prefs = await SharedPreferences.getInstance();
-      prefs.setString("username", usernameController.text.toString());
-      Get.offAllNamed(AppRoute.dashboardPage);
-      Get.snackbar("Login", "Login Successful");
-    } else {
-      Get.snackbar("Error", "invalid username or password");
-    }
+  void updateLayout(BoxConstraints constraints) {
+    isMobile.value = constraints.maxWidth < 600;
   }
 
-  /// Fungsi Logout
-  Future<void> logout() async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.clear(); // hapus semua data login
-
-    // arahkan kembali ke splashscreen
-    Get.offAllNamed(AppRoute.splashscreenPage);
-    Get.snackbar("Logout", "Berhasil keluar");
+  login() async {
+    if (usernameController.text == "admin" &&
+        passwordController.text == "admin") {
+      final prefs = await SharedPreferences.getInstance();
+      prefs.setString("username", usernameController.text);
+      Get.offAllNamed(AppRoute.todoListPage);
+      Get.snackbar("Login", "Login Successful");
+    } else {
+      Get.snackbar("Error", "Invalid username or password");
+    }
   }
 
   @override
@@ -37,4 +33,6 @@ class LoginController extends GetxController {
     passwordController.dispose();
     super.onClose();
   }
+
+  void logout() {}    
 }

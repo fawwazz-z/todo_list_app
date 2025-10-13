@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:todo_list_app/controllers/login_controller.dart';
-import 'package:todo_list_app/widgets/input_field.dart';
-import 'package:todo_list_app/widgets/primary_button.dart';
+import '../../controllers/login_controller.dart';
+import '../../widgets/input_field.dart';
+import '../../widgets/primary_button.dart';
 
 class LoginMobile extends StatelessWidget {
-  LoginMobile({Key? key}) : super(key: key);
-  final LoginController loginController = Get.find<LoginController>();
+  const LoginMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<LoginController>();
+
     return Scaffold(
       backgroundColor: Colors.brown[900],
       body: Center(
@@ -20,11 +21,11 @@ class LoginMobile extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(24),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Colors.black26,
                   blurRadius: 10,
-                  offset: const Offset(0, 4),
+                  offset: Offset(0, 4),
                 ),
               ],
             ),
@@ -45,26 +46,20 @@ class LoginMobile extends StatelessWidget {
                   style: TextStyle(color: Colors.black54),
                 ),
                 const SizedBox(height: 32),
-
                 InputField(
-                  controller: loginController.usernameController,
+                  controller: controller.usernameController,
                   label: "Username",
                   icon: Icons.person,
                 ),
                 const SizedBox(height: 20),
-
                 InputField(
-                  controller: loginController.passwordController,
+                  controller: controller.passwordController,
                   label: "Password",
                   icon: Icons.lock,
                   obscureText: true,
                 ),
                 const SizedBox(height: 24),
-
-                PrimaryButton(
-                  text: "Login",
-                  onPressed: loginController.login,
-                ),
+                PrimaryButton(text: "Login", onPressed: controller.login),
               ],
             ),
           ),

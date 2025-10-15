@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:todo_list_app/controllers/dashboard_controller.dart';
+import 'package:todo_list_app/controllers/profile_controller.dart';
 import 'package:todo_list_app/controllers/todo_controller.dart';
 import 'package:todo_list_app/controllers/add_todo_controller.dart';
 import 'package:todo_list_app/controllers/history_controller.dart';
@@ -11,5 +12,6 @@ class DashboardBinding extends Bindings {
     Get.lazyPut<TodoController>(() => TodoController());
     Get.lazyPut<AddTodoController>(() => AddTodoController());
     Get.lazyPut<HistoryController>(() => HistoryController(), fenix: true);
+    Get.lazyPut<ProfileController>(() => ProfileController());
   }
 }

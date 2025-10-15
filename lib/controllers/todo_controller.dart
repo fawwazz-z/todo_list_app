@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 import '../helpers/db_helper.dart';
 
 class Todo {
@@ -42,8 +43,15 @@ class Todo {
 }
 
 class TodoController extends GetxController {
-  var todos = <Todo>[].obs;
   final dbHelper = DBHelper();
+  var todos = <Todo>[].obs;
+
+  // 🔹 Tambahan untuk mendeteksi tampilan
+  var isMobile = true.obs;
+
+  void updateLayout(BoxConstraints constraints) {
+    isMobile.value = constraints.maxWidth < 600;
+  }
 
   @override
   void onInit() {
@@ -53,7 +61,7 @@ class TodoController extends GetxController {
 
   Future<void> loadTodos() async {
     final data = await dbHelper.getTodos();
-    todos.value = data.map((e) => Todo.fromMap(e)).toList();
+    todos.assignAll(data.map((e) => Todo.fromMap(e)).toList());
   }
 
   Future<void> addTodo(
@@ -88,6 +96,7 @@ class TodoController extends GetxController {
   }
 
   Future<void> updateTodo(Todo updatedTodo) async {
+    if (updatedTodo.id == null) return;
     await dbHelper.updateTodo(updatedTodo.id!, updatedTodo.toMap());
     await loadTodos();
   }

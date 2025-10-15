@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.brown),
       ),
       initialRoute: AppRoute.splashscreenPage,
-      getPages: AppPages.pages,
+      getPages: AppPages.pages, 
       initialBinding: DashboardBinding(),
     );
   }

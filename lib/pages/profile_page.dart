@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo_list_app/widgets/custom_color.dart';
-import 'package:todo_list_app/controllers/login_controller.dart';
+import 'package:todo_list_app/controllers/profile_controller.dart'; // ✅ ubah ke ProfileController
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -59,7 +59,7 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final LoginController loginController = Get.put(LoginController());
+    final ProfileController controller = Get.find<ProfileController>(); // ✅ ubah ke ProfileController
 
     return Scaffold(
       backgroundColor: AppColors.white,
@@ -76,14 +76,14 @@ class ProfilePage extends StatelessWidget {
             // Profile pertama
             buildProfileCard(
               imagePath: 'images/rengga.jpg',
-              name: 'Rengga reznatra daniswara',
+              name: 'Rengga Reznatra Daniswara',
               email: 'reenggard@example.com',
             ),
 
             // Profile kedua
             buildProfileCard(
               imagePath: 'images/pawas.jpg',
-              name: 'pawas labib',
+              name: 'Pawas Labib',
               email: 'pawaslabibs@example.com',
             ),
 
@@ -102,7 +102,7 @@ class ProfilePage extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                loginController.logout();
+                controller.logout(); // ✅ panggil logout dari ProfileController
               },
               child: const Text(
                 "Logout",

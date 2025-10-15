@@ -38,7 +38,7 @@ class AppPages {
       page: () => const ProfilePage(),
       binding: DashboardBinding(),
     ),
-    GetPage(
+     GetPage(
       name: AppRoute.todoListPage,
       page: () => TodoListPage(),
       binding: DashboardBinding(),

@@ -22,7 +22,7 @@ class LoginController extends GetxController {
       Get.offAllNamed(AppRoute.dashboardPage);
       Get.snackbar(
         "Login",
-        "Login Successful",
+        "Login Successful", 
         snackPosition: SnackPosition.BOTTOM,
       );
     } else {
@@ -34,17 +34,6 @@ class LoginController extends GetxController {
         colorText: Colors.white,
       );
     }
-  }
-
-  Future<void> logout() async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.clear();
-    Get.offAllNamed(AppRoute.splashscreenPage);
-    Get.snackbar(
-      "Logout",
-      "Berhasil keluar",
-      snackPosition: SnackPosition.BOTTOM,
-    );
   }
 
   @override
